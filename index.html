@@ -200,6 +200,7 @@
     padding:32px;
     box-shadow:var(--shadow);
   }
+  .sambutan.no-photo{grid-template-columns:1fr;gap:0;}
   .sambutan .photo{
     width:220px;height:260px;border-radius:14px;overflow:hidden;
     background:var(--brand-light);border:1px solid var(--border);
@@ -301,7 +302,7 @@
       <h1>Rumah belajar sepanjang hayat bagi setiap warga, tanpa batas usia</h1>
       <p class="lede">PKBM Insan Kamil adalah wadah resmi pendidikan nonformal dan pelatihan keterampilan terintegrasi di Kelurahan Sukamentri, Kecamatan Garut Kota — membuka akses belajar berkualitas untuk semua lapisan masyarakat.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="https://www.pkbminsankamil.sch.id/p/kontak.html">Daftar jadi warga belajar</a>
+        <a class="btn btn-primary" href="https://www.pkbminsankamil.sch.id/p/spmb.html">Daftar jadi warga belajar</a>
         <a class="btn btn-outline" href="https://www.pkbminsankamil.sch.id/p/visi-misi.html">Visi &amp; misi kami</a>
       </div>
     </div>
@@ -410,7 +411,7 @@
     <div class="sambutan">
       <div class="photo">
         <!-- Ganti URL_FOTO_KETUA dengan alamat foto ketua (lihat catatan di akhir file) -->
-        <img src="URL_FOTO_KETUA" alt="Ketua PKBM Insan Kamil" onerror="this.parentElement.style.display='none'">
+        <img src="URL_FOTO_KETUA" alt="Ketua PKBM Insan Kamil" onerror="this.closest('.sambutan').classList.add('no-photo'); this.parentElement.style.display='none'">
       </div>
       <div>
         <div class="quote-mark">“</div>
@@ -492,7 +493,7 @@
         <p>Tim kami siap membantu proses pendaftaran, mulai dari konsultasi awal hingga penempatan rombongan belajar.</p>
       </div>
       <div class="cta-buttons">
-        <a class="btn btn-primary" href="https://www.pkbminsankamil.sch.id/p/kontak.html">Daftar sekarang</a>
+        <a class="btn btn-primary" href="https://www.pkbminsankamil.sch.id/p/spmb.html">Daftar sekarang</a>
         <a class="btn btn-outline" href="https://www.pkbminsankamil.sch.id/p/kontak.html">Tanya lewat WhatsApp</a>
       </div>
     </div>

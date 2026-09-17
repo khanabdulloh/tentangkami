@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tentang Kami — PKBM Insan Kamil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-900:#0F4D35;
+    --green-950:#0B3A28;
+    --green-700:#1B6B4B;
+    --gold-600:#A9812F;
+    --gold-500:#C39B45;
+    --paper:#FAF6EC;
+    --paper-deep:#F1EAD8;
+    --sage:#EDF1E9;
+    --ink:#1D2A22;
+    --ink-soft:#4B5A50;
+    --line:#D9CFB2;
+    --max:880px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  h1,h2,h3{
+    font-family:'Spectral',Georgia,serif;
+    font-weight:600;
+    line-height:1.2;
+    margin:0;
+    color:var(--green-950);
+  }
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    color:var(--gold-600);
+    letter-spacing:.02em;
+    margin:0 0 10px;
+  }
+
+  /* Breadcrumb strip */
+  .crumb{
+    background:var(--green-950);
+    color:#DDE7DF;
+    font-size:13px;
+    padding:12px 0;
+  }
+  .crumb a{color:#DDE7DF;text-decoration:none;opacity:.85;}
+  .crumb a:hover{opacity:1;text-decoration:underline;}
+  .crumb span{opacity:.55;margin:0 6px;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(165deg,var(--green-950) 0%,var(--green-900) 55%,var(--green-700) 130%);
+    color:#F4F0E2;
+    padding:56px 0 68px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-pattern{
+    position:absolute;inset:0;
+    opacity:.12;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23F4F0E2' stroke-width='1'%3E%3Cpath d='M42 2 L82 42 L42 82 L2 42 Z'/%3E%3Ccircle cx='42' cy='42' r='20'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:84px 84px;
+  }
+  .hero h1{
+    color:#fff;
+    font-size:clamp(30px,4.4vw,44px);
+    max-width:15ch;
+  }
+  .hero p.lede{
+    font-size:17px;
+    max-width:56ch;
+    color:#E6E0CC;
+    margin-top:16px;
+  }
+  .hero-tag{
+    display:inline-block;
+    font-size:13px;
+    font-weight:600;
+    color:var(--green-950);
+    background:var(--gold-500);
+    padding:6px 14px;
+    border-radius:100px;
+    margin-bottom:18px;
+  }
+
+  section{padding:56px 0;}
+  section.alt{background:var(--sage);}
+
+  .lead-block p{font-size:16.5px;color:var(--ink-soft);max-width:68ch;}
+  .lead-block p + p{margin-top:14px;}
+
+  .verse{
+    border-left:3px solid var(--gold-500);
+    padding:4px 0 4px 20px;
+    margin:28px 0 0;
+    font-family:'Spectral',serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--green-950);
+  }
+  .verse cite{
+    display:block;
+    font-style:normal;
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:8px;
+  }
+
+  /* Pillars */
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    margin-top:36px;
+    border-top:1px solid var(--line);
+  }
+  .pillar{
+    padding:26px 22px 26px 0;
+    border-right:1px solid var(--line);
+  }
+  .pillar:last-child{border-right:none;padding-right:0;}
+  .pillar .num{
+    font-family:'Spectral',serif;
+    font-size:13px;
+    color:var(--gold-600);
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .pillar h3{font-size:20px;margin-bottom:8px;}
+  .pillar p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* Identity table */
+  .identity{
+    margin-top:32px;
+    border-top:1px solid var(--line);
+  }
+  .id-row{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .id-row dt{color:var(--ink-soft);font-weight:500;}
+  .id-row dd{margin:0;}
+
+  /* Sambutan */
+  .sambutan{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:32px;
+    align-items:start;
+    margin-top:8px;
+  }
+  .sambutan .photo{
+    width:180px;height:220px;
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--paper-deep);
+    border:1px solid var(--line);
+  }
+  .sambutan .photo img{width:100%;height:100%;object-fit:cover;}
+  .sambutan blockquote{
+    margin:0 0 14px;
+    font-family:'Spectral',serif;
+    font-size:19px;
+    font-style:italic;
+    color:var(--green-950);
+    line-height:1.5;
+  }
+  .sambutan .name{font-weight:600;font-size:15px;}
+  .sambutan .role{font-size:14px;color:var(--ink-soft);}
+
+  /* Audience */
+  .audience{
+    list-style:none;
+    padding:0;margin:32px 0 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .audience li{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:16px 18px;
+    font-size:15px;
+  }
+
+  /* Stats */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    margin-top:36px;
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+  }
+  .stat{
+    padding:22px 18px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat b{
+    display:block;
+    font-family:'Spectral',serif;
+    font-size:28px;
+    color:var(--green-900);
+  }
+  .stat span{font-size:13px;color:var(--ink-soft);}
+
+  /* CTA */
+  .cta{
+    background:var(--green-950);
+    color:#F4F0E2;
+    padding:48px 0;
+    text-align:left;
+  }
+  .cta h2{color:#fff;font-size:26px;max-width:22ch;}
+  .cta p{color:#D8D2BC;margin-top:10px;max-width:52ch;}
+  .cta-buttons{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:6px;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .btn-primary{background:var(--gold-500);color:var(--green-950);}
+  .btn-outline{border:1px solid #6B8C7B;color:#F4F0E2;}
+
+  footer.note{
+    padding:20px 0 40px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    text-align:center;
+  }
+
+  @media (max-width:720px){
+    .pillars{grid-template-columns:1fr;}
+    .pillar{border-right:none;border-bottom:1px solid var(--line);padding:20px 0;}
+    .pillar:last-child{border-bottom:none;}
+    .id-row{grid-template-columns:1fr;gap:4px;}
+    .sambutan{grid-template-columns:1fr;}
+    .sambutan .photo{width:140px;height:170px;}
+    .audience{grid-template-columns:1fr;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div class="crumb">
+  <div class="wrap"><a href="https://www.pkbminsankamil.sch.id/">Beranda</a><span>/</span><a href="https://www.pkbminsankamil.sch.id/p/profil.html">Profil</a><span>/</span>Tentang Kami</div>
+</div>
+
+<header class="hero">
+  <div class="hero-pattern"></div>
+  <div class="wrap">
+    <span class="hero-tag">Profil Lembaga</span>
+    <h1>Rumah belajar sepanjang hayat bagi setiap warga Sukamentri dan sekitarnya</h1>
+    <p class="lede">PKBM Insan Kamil adalah wadah pendidikan nonformal dan pelatihan keterampilan terintegrasi yang membuka kembali akses belajar yang layak — tanpa memandang usia, latar belakang, maupun keterbatasan.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap lead-block">
+    <p class="eyebrow">Siapa Kami</p>
+    <p>Nama <em>Insan Kamil</em> berarti manusia yang utuh — cerdas dalam berpikir, mandiri dalam berikhtiar, dan luhur dalam berakhlak. Nama ini kami jadikan arah sekaligus ukuran bagi setiap layanan yang kami selenggarakan di Kelurahan Sukamentri, Kecamatan Garut Kota.</p>
+    <p>Kami hadir untuk warga yang sempat kehilangan kesempatan belajar: anak dan remaja yang putus sekolah, orang dewasa maupun lansia yang belum melek aksara, ibu rumah tangga, dan pekerja yang ingin melanjutkan pendidikannya. Melalui pendidikan kesetaraan, program keaksaraan, pelatihan vokasi, dan pembinaan keislaman, kami membantu setiap warga belajar menyelesaikan pendidikannya sekaligus tumbuh menjadi pribadi yang mandiri secara ekonomi dan kokoh akhlaknya.</p>
+    <div class="verse">
+      “Dan tolong-menolonglah kamu dalam mengerjakan kebajikan dan takwa.”
+      <cite>QS. Al-Ma’idah (5): 2</cite>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Landasan Lembaga</p>
+    <h2>Tiga pilar pembentuk pribadi yang paripurna</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">Fikriyah</div>
+        <h3>Cerdas</h3>
+        <p>Pendidikan kesetaraan Paket A, Paket B, dan Paket C serta program keaksaraan yang bermutu dan terjangkau, membuka kembali akses ijazah dan literasi dasar bagi siapa pun yang tertinggal.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">Jasadiyah</div>
+        <h3>Mandiri</h3>
+        <p>Pelatihan keterampilan hidup dan kewirausahaan berbasis potensi lokal, mengantarkan warga belajar menjadi tenaga terampil maupun wirausahawan yang berdaya secara ekonomi.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">Ruhiyah</div>
+        <h3>Berakhlak Mulia</h3>
+        <p>Pembinaan akidah, tahsin-tahfizh Al-Qur'an, dan mentoring akhlak yang menyatu dengan proses belajar, menumbuhkan pribadi yang jujur, disiplin, dan peduli sesama.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Sambutan Ketua</p>
+    <div class="sambutan">
+      <div class="photo">
+        <!-- Ganti URL_FOTO_KETUA dengan alamat foto ketua (lihat catatan di akhir file) -->
+        <img src="URL_FOTO_KETUA" alt="Ketua PKBM Insan Kamil" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div>
+        <blockquote>“Pendidikan adalah hak setiap warga, tanpa memandang usia maupun keterbatasan. Kami hadir agar tidak ada yang tertinggal: setiap orang berhak atas ilmu, keterampilan, dan pembinaan akhlak yang layak diterimanya.”</blockquote>
+        <div class="name">Bubun Nursyaban, SH., MA</div>
+        <div class="role">Ketua PKBM Insan Kamil — Sukamentri, Garut Kota</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Identitas Lembaga</p>
+    <h2>Data ringkas PKBM Insan Kamil</h2>
+    <dl class="identity">
+      <div class="id-row"><dt>Nama lembaga</dt><dd>PKBM Insan Kamil</dd></div>
+      <div class="id-row"><dt>NPSN</dt><dd>P9999507</dd></div>
+      <div class="id-row"><dt>Alamat</dt><dd>Kelurahan Sukamentri, Kecamatan Garut Kota, Kabupaten Garut, Jawa Barat</dd></div>
+      <div class="id-row"><dt>Tahun berdiri</dt><dd>2026</dd></div>
+      <div class="id-row"><dt>Jam layanan</dt><dd>Senin–Jumat, 08.00–15.00 WIB</dd></div>
+      <div class="id-row"><dt>Layanan utama</dt><dd>Pendidikan kesetaraan (Paket A, B, C), keaksaraan, keterampilan &amp; kewirausahaan, pembinaan keislaman, PAUD, dan layanan pendukung warga belajar</dd></div>
+    </dl>
+
+    <div class="stats">
+      <div class="stat"><b>140+</b><span>Warga belajar aktif</span></div>
+      <div class="stat"><b>6</b><span>Program unggulan terpadu</span></div>
+      <div class="stat"><b>2026</b><span>Tahun lembaga didirikan</span></div>
+      <div class="stat"><b>97%</b><span>Target kelulusan ujian kesetaraan</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Terbuka Bagi</p>
+    <h2>Kami hadir untuk warga yang selama ini sulit menemukan ruang belajar</h2>
+    <ul class="audience">
+      <li>Anak &amp; remaja putus sekolah</li>
+      <li>Dewasa &amp; lansia yang belum melek aksara</li>
+      <li>Ibu rumah tangga</li>
+      <li>Pekerja yang ingin melanjutkan sekolah</li>
+    </ul>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>Mari belajar bersama, tidak ada kata terlambat.</h2>
+    <p>Tim kami siap membantu proses pendaftaran, mulai dari konsultasi awal hingga penempatan rombongan belajar.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="https://www.pkbminsankamil.sch.id/p/kontak.html">Daftar jadi warga belajar</a>
+      <a class="btn btn-outline" href="https://www.pkbminsankamil.sch.id/p/visi-misi.html">Lihat visi &amp; misi</a>
+    </div>
+  </div>
+</div>
+
+<footer class="note">
+  <div class="wrap">PKBM Insan Kamil · Sukamentri, Garut Kota — halaman ini dimuat dari GitHub dan ditampilkan melalui iframe.</div>
+</footer>
+
+<!-- ========================================================================
+CATATAN UNTUK PENGELOLA WEBSITE (hapus komentar ini bila sudah tidak perlu):
+
+1. Cari tulisan URL_FOTO_KETUA pada kode ini (Ctrl+F), lalu ganti bagian di
+   dalam tanda kutip dengan alamat foto asli ketua PKBM.
+2. Cara mendapatkan alamat foto: buat draf postingan baru di Blogger, unggah
+   foto ke sana, klik kanan foto yang tampil, pilih "Salin alamat gambar",
+   lalu tempel alamat itu menggantikan URL_FOTO_KETUA. Draf boleh dihapus;
+   foto tetap tersimpan di server Blogger selama alamatnya masih dipakai.
+3. Jika foto belum diisi, kotak foto akan otomatis disembunyikan sehingga
+   tata letak tetap rapi.
+======================================================================== -->
+</body>
+</html>
